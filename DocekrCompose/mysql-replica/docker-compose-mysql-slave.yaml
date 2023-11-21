@@ -11,10 +11,10 @@ services:
         volumes:
            mysql56-slave-galaxy1:/var/lib/mysql
            ./slave.cnf:/etc/mysql/my.cnf
-        network:
+        networks:
          - mysql
 volumes:
   mysql56-slave-galaxy1:
-network:
+networks:
    mysql:
   
