@@ -1,0 +1,20 @@
+version: '3'
+services:
+    mysql56-master-galaxy:
+        image: mysql:5.6
+        restart: always
+        container_name: mysql56-master-galaxy
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: test100test
+        volumes:
+           mysql56-master:/var/lib/mysql
+           ./master.cnf:/etc/mysql/my.cnf
+        network:
+         - mysql
+
+volumes:
+  mysql56-master-galaxy:
+network:
+   mysql:
